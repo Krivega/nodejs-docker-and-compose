@@ -38,10 +38,10 @@ export default function configuration() {
     database: {
       url: process.env.DATABASE_URL,
       port: Number.parseInt(process.env.DATABASE_PORT ?? '5432', 10),
-      host: process.env.DATABASE_HOST ?? 'localhost',
-      username: process.env.DATABASE_USERNAME ?? 'student',
-      password: process.env.DATABASE_PASSWORD ?? 'student',
-      name: process.env.DATABASE_NAME ?? 'kupipodariday',
+      host: process.env.POSTGRES_HOST ?? 'localhost',
+      username: process.env.POSTGRES_USER ?? 'student',
+      password: process.env.POSTGRES_PASSWORD ?? 'student',
+      name: process.env.POSTGRES_DB ?? 'kupipodariday',
       synchronize:
         process.env.NODE_ENV !== 'production' &&
         process.env.DATABASE_SYNCHRONIZE !== 'false',
