@@ -31,6 +31,7 @@
     "./test",
     "./eslint.config.ts",
     "./jest.config.ts",
-    "./ormconfig.ts"
+    "./ormconfig.ts",
+    "./scripts"
   ]
 }

@@ -7,16 +7,11 @@ import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from '@/app.module';
-import { generateSwagger } from './generateSwagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableShutdownHooks();
-
-  if (process.env.GENERATE_SWAGGER === '1') {
-    await generateSwagger(app);
-  }
 
   app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
 
